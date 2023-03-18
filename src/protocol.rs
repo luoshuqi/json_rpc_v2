@@ -88,7 +88,7 @@ pub struct Error {
 
 impl From<Infallible> for Error {
     fn from(value: Infallible) -> Self {
-        match value { }
+        match value {}
     }
 }
 
@@ -129,6 +129,14 @@ impl Error {
         Self {
             code: -32603,
             message: Cow::Borrowed("Internal error"),
+            data: None,
+        }
+    }
+
+    pub const fn server_error() -> Self {
+        Self {
+            code: -32000,
+            message: Cow::Borrowed("Server error"),
             data: None,
         }
     }
