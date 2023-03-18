@@ -3,6 +3,9 @@
 JSON-RPC 2.0 server implementation in Rust
 
 # Example
+
+[full example](examples/hyper.rs)
+
 ```rust
 
 #[json_rpc]
